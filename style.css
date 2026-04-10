@@ -98,8 +98,14 @@ h3 { font-size: clamp(17px, 2.5vw, 22px); }
   color: var(--white);
   text-decoration: none;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
   line-height: 1.2;
+}
+.nav-brand-text {
+  display: flex;
+  flex-direction: column;
 }
 .nav-brand span {
   font-family: inherit;
