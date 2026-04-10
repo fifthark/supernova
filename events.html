@@ -105,6 +105,25 @@
   .events-grid { grid-template-columns: 1fr; }
 }
 </style>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1457780285713381');
+fbq('track', 'PageView');
+fbq('track', 'ViewContent', {content_name: 'Events Page'});
+</script>
+<noscript>
+<img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1457780285713381&ev=PageView&noscript=1"/>
+</noscript>
+<!-- End Meta Pixel -->
 </head>
 <body>
 
@@ -219,7 +238,7 @@
     </div>
     <p class="close-note">Registration closes 22 April. Categories may fill early — register early to secure your spot.</p>
     <div class="ed-btns">
-      <a href="https://link.supernovaclub.org/App" target="_blank" class="btn btn-gold">Register now</a>
+      <a href="https://link.supernovaclub.org/App" target="_blank" class="btn btn-gold" onclick="fbq('track', 'Contact')">Register now</a>
     </div>
   </div>
 </section>
@@ -268,7 +287,7 @@
     </div>
     <p class="close-note">Registration closes 3 May. Categories may fill early — register early to secure your spot.</p>
     <div class="ed-btns">
-      <a href="https://link.supernovaclub.org/App" target="_blank" class="btn btn-gold">Register via the app</a>
+      <a href="https://link.supernovaclub.org/App" target="_blank" class="btn btn-gold" onclick="fbq('track', 'Contact')">Register via the app</a>
     </div>
   </div>
 </section>
@@ -332,7 +351,7 @@
     </div>
     <p class="close-note">Registration closes 17 May. Register via the SuperNova App.</p>
     <div class="ed-btns">
-      <a href="https://link.supernovaclub.org/App" target="_blank" class="btn btn-gold">Register now</a>
+      <a href="https://link.supernovaclub.org/App" target="_blank" class="btn btn-gold" onclick="fbq('track', 'Contact')">Register now</a>
       <a href="tel:0425154061" class="btn btn-outline-white">Questions? 0425 154 061</a>
     </div>
   </div>
@@ -385,7 +404,7 @@
     </div>
     <p class="close-note">Registration closes 6 June. Categories may fill early — register early to secure your spot.</p>
     <div class="ed-btns">
-      <a href="https://link.supernovaclub.org/App" target="_blank" class="btn btn-gold">Register now</a>
+      <a href="https://link.supernovaclub.org/App" target="_blank" class="btn btn-gold" onclick="fbq('track', 'Contact')">Register now</a>
     </div>
   </div>
 </section>
@@ -434,7 +453,7 @@
     </div>
     <p class="close-note">Season started Monday 20 April. Registration via SuperNova App.</p>
     <div class="ed-btns">
-      <a href="https://link.supernovaclub.org/App" target="_blank" class="btn btn-gold">Register via the app</a>
+      <a href="https://link.supernovaclub.org/App" target="_blank" class="btn btn-gold" onclick="fbq('track', 'Contact')">Register via the app</a>
       <a href="tel:0425154061" class="btn btn-outline-white">Questions? 0425 154 061</a>
     </div>
   </div>
@@ -445,7 +464,7 @@
     <h2>Ready to play?</h2>
     <p>Choose the format that suits you — then register in the SuperNova App when you're ready. No pressure.</p>
     <div class="final-cta-btns">
-      <a href="https://link.supernovaclub.org/App" target="_blank" class="btn btn-gold">Register via the app</a>
+      <a href="https://link.supernovaclub.org/App" target="_blank" class="btn btn-gold" onclick="fbq('track', 'Contact')">Register via the app</a>
       <a href="index.html" class="btn btn-outline-white">Back to home</a>
     </div>
     <p class="final-note">Questions? 0425 154 061 · info@supernovaclub.org · link.supernovaclub.org/App</p>
