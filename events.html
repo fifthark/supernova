@@ -4,97 +4,46 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Live Events — SuperNova Badminton Club</title>
-<meta name="description" content="Four events open for registration. Squad Tournament, U13/U17 Doubles, Adults Doubles and Pennant League. Graded competition, real prizes, skill-matched play across Melbourne.">
+<meta name="description" content="Five events open for registration. Squad Tournaments, SuperNova Open, U13/U17 Doubles and Pennant League. Graded competition, real prizes, skill-matched play across Melbourne.">
 <link rel="stylesheet" href="style.css">
 <style>
-
-/* ── EVENTS HERO ── */
-.events-hero {
-  background: var(--navy);
-  padding: 56px 0 48px;
-  border-bottom: 1px solid var(--border-gold);
-}
+.events-hero { background: var(--navy); padding: 56px 0 48px; border-bottom: 1px solid var(--border-gold); }
 .events-hero h1 { color: var(--white); margin: 12px 0 14px; max-width: 540px; }
 .events-hero-sub { font-size: 15px; color: var(--on-navy); line-height: 1.65; max-width: 480px; }
 
-/* ── OVERVIEW GRID ── */
-.overview {
-  background: var(--off-white);
-  padding: 52px 0;
-  border-bottom: 1px solid var(--border-dark);
-}
+.overview { background: var(--off-white); padding: 52px 0; border-bottom: 1px solid var(--border-dark); }
 .overview h2 { color: var(--navy); margin: 10px 0 8px; }
 .overview-sub { font-size: 13px; color: rgba(26,26,62,0.5); margin-bottom: 32px; }
-.events-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
-}
-.event-card {
-  background: var(--white);
-  border: 1px solid var(--border-dark);
-  border-radius: 10px;
-  padding: 22px 24px;
-  text-decoration: none;
-  display: block;
-  color: inherit;
-  transition: border-color 0.2s, box-shadow 0.2s, transform 0.18s;
-}
-.event-card:hover {
-  border-color: rgba(26,26,62,0.2);
-  box-shadow: 0 6px 24px rgba(26,26,62,0.07);
-  transform: translateY(-2px);
-}
+.events-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+.events-grid-bottom { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.event-card { background: var(--white); border: 1px solid var(--border-dark); border-radius: 10px; padding: 20px 22px; text-decoration: none; display: block; color: inherit; transition: border-color 0.2s, box-shadow 0.2s, transform 0.18s; }
+.event-card:hover { border-color: rgba(26,26,62,0.2); box-shadow: 0 6px 24px rgba(26,26,62,0.07); transform: translateY(-2px); }
 .ec-type { font-size: 10px; font-weight: 600; letter-spacing: 0.11em; text-transform: uppercase; color: var(--gold-soft); margin-bottom: 6px; display: block; }
-.event-card h3 { font-size: 19px; font-family: Georgia, serif; font-weight: 400; color: var(--navy); margin-bottom: 5px; }
-.ec-meta { font-size: 13px; color: rgba(26,26,62,0.5); margin-bottom: 16px; line-height: 1.5; }
+.event-card h3 { font-size: 17px; font-family: Georgia, serif; font-weight: 400; color: var(--navy); margin-bottom: 5px; }
+.ec-meta { font-size: 12px; color: rgba(26,26,62,0.5); margin-bottom: 14px; line-height: 1.5; }
 .ec-footer { display: flex; align-items: center; justify-content: space-between; }
 .ec-arrow { font-size: 12px; font-weight: 500; color: var(--navy); }
 
-/* ── EVENT DETAIL SECTIONS ── */
-.ed {
-  padding: 56px 0;
-}
-.ed.dark {
-  background: var(--navy);
-  border-top: 1px solid var(--border-gold);
-}
-.ed.light {
-  background: var(--white);
-  border-top: 1px solid var(--border-dark);
-}
+.ed { padding: 56px 0; }
+.ed.dark  { background: var(--navy); border-top: 1px solid var(--border-gold); }
+.ed.light { background: var(--white); border-top: 1px solid var(--border-dark); }
 .ed h2 { margin: 10px 0 6px; }
 .ed.dark  h2 { color: var(--white); }
 .ed.light h2 { color: var(--navy); }
 .ed-meta { font-size: 13px; margin-bottom: 32px; }
 .ed.dark  .ed-meta { color: var(--muted); }
 .ed.light .ed-meta { color: rgba(26,26,62,0.5); }
-
-.ed-cols {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px 44px;
-  margin-bottom: 28px;
-}
-.ed-block h4 {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
+.ed-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 44px; margin-bottom: 28px; }
+.ed-block h4 { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; }
 .ed.dark  .ed-block h4 { color: var(--gold-soft); }
 .ed.light .ed-block h4 { color: rgba(26,26,62,0.40); }
-
 .ed-block p { font-size: 13px; line-height: 1.65; }
-.ed.dark  .ed-block p  { color: var(--on-navy); }
-.ed.light .ed-block p  { color: rgba(26,26,62,0.75); }
+.ed.dark  .ed-block p { color: var(--on-navy); }
+.ed.light .ed-block p { color: rgba(26,26,62,0.75); }
 .ed.dark  .ed-block .arrow-list li { color: var(--on-navy); }
 .ed.light .ed-block .arrow-list li { color: rgba(26,26,62,0.75); }
-.ed.dark  .chip { }
 .ed.dark  .chip { background: rgba(255,255,255,0.09); color: rgba(255,255,255,0.75); }
-.ed.light .chip { background: rgba(26,26,62,0.07);   color: rgba(26,26,62,0.65); }
-
+.ed.light .chip { background: rgba(26,26,62,0.07); color: rgba(26,26,62,0.65); }
 .price-row { display: flex; align-items: baseline; gap: 6px; margin-bottom: 8px; }
 .price-big { font-family: Georgia, serif; font-size: 30px; font-weight: 400; }
 .ed.dark  .price-big { color: var(--gold); }
@@ -102,57 +51,68 @@
 .price-unit { font-size: 13px; }
 .ed.dark  .price-unit { color: var(--muted); }
 .ed.light .price-unit { color: rgba(26,26,62,0.5); }
-
 .close-note { font-size: 11px; margin-bottom: 18px; }
 .ed.dark  .close-note { color: var(--muted); }
 .ed.light .close-note { color: rgba(26,26,62,0.45); }
-
 .ed-btns { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
 
-/* Prize callout boxes */
-.prize-boxes { display: flex; gap: 12px; margin-top: 4px; }
-.prize-box {
-  flex: 1;
-  border-radius: 6px;
-  padding: 12px 14px;
-  text-align: center;
-}
-.prize-box.gold-box { background: rgba(212,168,67,0.15); border: 1px solid var(--border-gold); }
-.prize-box.silver-box { background: rgba(255,255,255,0.06); border: 1px solid var(--border-gold); }
-.prize-box-amt { font-family: Georgia, serif; font-size: 22px; color: var(--gold); }
-.prize-box-label { font-size: 11px; color: var(--muted); margin-top: 3px; }
+.prize-boxes { display: flex; gap: 10px; margin-top: 4px; }
+.prize-box { flex: 1; border-radius: 6px; padding: 11px 12px; text-align: center; }
+.prize-box.gold-box-light   { background: rgba(212,168,67,0.10); border: 1px solid rgba(212,168,67,0.25); }
+.prize-box.silver-box-light { background: rgba(26,26,62,0.04); border: 1px solid var(--border-dark); }
+.prize-box-amt { font-family: Georgia, serif; font-size: 20px; color: var(--navy); }
+.prize-box-label { font-size: 11px; color: rgba(26,26,62,0.5); margin-top: 3px; }
 
-/* ── FINAL CTA ── */
-.final-cta {
-  background: var(--navy-mid);
-  padding: 60px 0;
-  text-align: center;
-  border-top: 1px solid var(--border-gold);
-}
+/* SuperNova Open format cards */
+.format-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 28px; }
+.format-card { border-radius: 10px; padding: 16px 18px; }
+.ed.dark  .format-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); }
+.ed.light .format-card { background: var(--off-white); border: 1px solid var(--border-dark); }
+.format-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.format-card-title { font-size: 15px; font-family: Georgia, serif; font-weight: 400; }
+.ed.dark  .format-card-title { color: var(--white); }
+.ed.light .format-card-title { color: var(--navy); }
+.format-card-price { font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 20px; }
+.price-doubles { background: rgba(124,58,237,0.12); color: #7C3AED; }
+.price-singles { background: rgba(5,150,105,0.12); color: #059669; }
+.format-card-sub { font-size: 12px; margin-bottom: 8px; }
+.ed.dark  .format-card-sub { color: var(--muted); }
+.ed.light .format-card-sub { color: rgba(26,26,62,0.5); }
+.format-card-prize { font-size: 12px; line-height: 1.5; }
+.ed.dark  .format-card-prize { color: var(--on-navy); }
+.ed.light .format-card-prize { color: rgba(26,26,62,0.75); }
+.format-card-prize strong { font-weight: 600; }
+.ed.dark  .format-card-prize strong { color: var(--white); }
+.ed.light .format-card-prize strong { color: var(--navy); }
+.disclaimer { font-size: 11px; margin-top: -16px; margin-bottom: 20px; }
+.ed.dark  .disclaimer { color: rgba(255,255,255,0.35); }
+.ed.light .disclaimer { color: rgba(26,26,62,0.35); }
+
+.final-cta { background: var(--navy-mid); padding: 60px 0; text-align: center; border-top: 1px solid var(--border-gold); }
 .final-cta h2 { color: var(--white); margin-bottom: 12px; }
 .final-cta p  { font-size: 15px; color: var(--muted); max-width: 420px; margin: 0 auto 32px; line-height: 1.7; }
 .final-cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 .final-note { font-size: 11px; color: rgba(255,255,255,0.3); margin-top: 20px; }
 
-/* ── RESPONSIVE ── */
 @media (max-width: 768px) {
-  .events-grid { grid-template-columns: 1fr; }
-  .ed-cols     { grid-template-columns: 1fr; gap: 24px; }
+  .events-grid { grid-template-columns: 1fr 1fr; }
+  .events-grid-bottom { grid-template-columns: 1fr; }
+  .ed-cols { grid-template-columns: 1fr; gap: 24px; }
+  .format-cards { grid-template-columns: 1fr; }
   .prize-boxes { flex-direction: column; }
+}
+@media (max-width: 560px) {
+  .events-grid { grid-template-columns: 1fr; }
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-brand">
       <img src="Logo_small.jpg" alt="SuperNova" style="height:40px;width:40px;object-fit:contain;border-radius:6px;">
-      <div class="nav-brand-text">
-        SuperNova Badminton Club
-        <span>Melbourne's Community Badminton Club</span>
-      </div>
+      <div class="nav-brand-text">SuperNova Badminton Club<span>Melbourne's Community Badminton Club</span></div>
     </a>
     <div class="nav-links">
       <a href="index.html#pennant">Pennant League</a>
@@ -163,63 +123,262 @@
   </div>
 </nav>
 
-<!-- EVENTS HERO -->
 <section class="events-hero">
   <div class="container">
     <span class="eyebrow eyebrow-gold">SuperNova Badminton Club</span>
-    <h1>Four events.<br>Open now.</h1>
+    <h1>Five events.<br>Open now.</h1>
     <p class="events-hero-sub">Get the details for each event below — format, pricing, prizes, fill-in pathway. Register via the SuperNova App when you're ready.</p>
   </div>
 </section>
 
-<!-- OVERVIEW GRID -->
 <section class="overview">
   <div class="container">
     <span class="eyebrow eyebrow-navy">What's live now</span>
     <h2>Choose the format that suits you.</h2>
-    <p class="overview-sub">All four events are open for registration. Scroll down for full details on each.</p>
+    <p class="overview-sub">All events are open for registration. Scroll down for full details on each.</p>
     <div class="events-grid">
-      <a href="#pennant" class="event-card">
-        <span class="ec-type">Pennant League</span>
-        <h3>Pennant League — Advanced</h3>
-        <p class="ec-meta">Starts Mon 20 April · ACM Truganina · Weekly · Ongoing season</p>
-        <div class="ec-footer">
-          <span class="pill"><span class="pill-dot"></span>Registration open</span>
-          <span class="ec-arrow">Details ↓</span>
-        </div>
-      </a>
-      <a href="#squad" class="event-card">
+      <a href="#squad-may" class="event-card">
         <span class="ec-type">Squad Tournament</span>
         <h3>Squad Tournament</h3>
-        <p class="ec-meta">Sat 3 May · Badminton Connect, Noble Park · $200 prize pool · Closes 22 April</p>
-        <div class="ec-footer">
-          <span class="pill"><span class="pill-dot"></span>Registration open</span>
-          <span class="ec-arrow">Details ↓</span>
-        </div>
+        <p class="ec-meta">Sat 3 May · Badminton Connect, Noble Park<br>$200 prize pool · Closes 22 April</p>
+        <div class="ec-footer"><span class="pill"><span class="pill-dot"></span>Open</span><span class="ec-arrow">Details ↓</span></div>
       </a>
       <a href="#u1317" class="event-card">
         <span class="ec-type">Junior Doubles</span>
         <h3>U13/U17 Doubles</h3>
-        <p class="ec-meta">Sun 10 May · Peak Play, Laverton · $80/team · $100 + $75 prizes + trophies</p>
-        <div class="ec-footer">
-          <span class="pill"><span class="pill-dot"></span>Registration open</span>
-          <span class="ec-arrow">Details ↓</span>
-        </div>
+        <p class="ec-meta">Sun 10 May · Peak Play, Laverton<br>$80/team · $100 + $75 prizes + trophies</p>
+        <div class="ec-footer"><span class="pill"><span class="pill-dot"></span>Open</span><span class="ec-arrow">Details ↓</span></div>
       </a>
-      <a href="#adults" class="event-card">
-        <span class="ec-type">Adults Tournament</span>
-        <h3>Adults Doubles</h3>
-        <p class="ec-meta">Sat 23 May · ACM Truganina · Men's, Women's, Mixed · All grades</p>
-        <div class="ec-footer">
-          <span class="pill"><span class="pill-dot"></span>Registration open</span>
-          <span class="ec-arrow">Details ↓</span>
-        </div>
+      <a href="#open" class="event-card">
+        <span class="ec-type">SuperNova Open</span>
+        <h3>SuperNova Open</h3>
+        <p class="ec-meta">Sun 24 May · 9:30 AM – 2:00 PM<br>Singles &amp; Doubles · Closes 17 May</p>
+        <div class="ec-footer"><span class="pill"><span class="pill-dot"></span>Open</span><span class="ec-arrow">Details ↓</span></div>
+      </a>
+    </div>
+    <div class="events-grid-bottom">
+      <a href="#squad-june" class="event-card">
+        <span class="ec-type">Squad Tournament</span>
+        <h3>Squad Tournament</h3>
+        <p class="ec-meta">Sat 13 June · Momentum, Truganina<br>Registration open</p>
+        <div class="ec-footer"><span class="pill"><span class="pill-dot"></span>Open</span><span class="ec-arrow">Details ↓</span></div>
+      </a>
+      <a href="#pennant" class="event-card">
+        <span class="ec-type">Pennant League</span>
+        <h3>Pennant League — Advanced</h3>
+        <p class="ec-meta">Starts Mon 20 April · ACM Truganina<br>Weekly · Ongoing season</p>
+        <div class="ec-footer"><span class="pill"><span class="pill-dot"></span>Open</span><span class="ec-arrow">Details ↓</span></div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- ── EVENT 1: PENNANT LEAGUE ── -->
+<!-- SQUAD TOURNAMENT MAY -->
+<section class="ed dark" id="squad-may">
+  <div class="container">
+    <span class="eyebrow eyebrow-white">Event details</span>
+    <h2>Squad Tournament</h2>
+    <p class="ed-meta">Saturday 3 May · Badminton Connect, Noble Park · Registration closes 22 April</p>
+    <div class="ed-cols">
+      <div class="ed-block">
+        <h4>What it is</h4>
+        <p>A one-day team event built around squads of four — 2 male, 2 female. You compete together across the day, backing your teammates from the sideline. One win from anyone swings the whole tie.</p>
+      </div>
+      <div class="ed-block">
+        <h4>Match format</h4>
+        <ul class="arrow-list">
+          <li>4 games per tie: 1 MD · 1 WD · 2 XD</li>
+          <li>30-point games, no deuce</li>
+          <li>75-minute cap per tie</li>
+          <li>Knockouts: 21-point games</li>
+          <li>Round robin pools → knockout finals</li>
+        </ul>
+      </div>
+      <div class="ed-block">
+        <h4>Entry &amp; prizes</h4>
+        <div class="price-row"><span class="price-big">$40</span><span class="price-unit">per player</span></div>
+        <p>$200 prize pool · Graded competition · Play at your level</p>
+      </div>
+      <div class="ed-block">
+        <h4>Grades</h4>
+        <div class="chips" style="margin-bottom:12px">
+          <span class="chip chip-dark">Beginner</span>
+          <span class="chip chip-dark">Intermediate</span>
+          <span class="chip chip-dark">Advanced</span>
+        </div>
+        <p>Select your grade on registration. Admin confirms placement after entries close.</p>
+      </div>
+    </div>
+    <div class="fill-strip fill-strip-dark">
+      <p><strong>No full squad yet?</strong> Register as a fill-in or pair — we'll help place you into a squad where we can. Message 0425 154 061 or select fill-in when registering via the app.</p>
+    </div>
+    <p class="close-note">Registration closes 22 April. Register via the SuperNova App or at badmintontournament.fifthark.com</p>
+    <div class="ed-btns">
+      <a href="https://link.supernovaclub.org/App" target="_blank" class="btn btn-gold">Register now</a>
+      <a href="https://link.supernovaclub.org/App" target="_blank" class="btn btn-outline-white">Register as fill-in</a>
+    </div>
+  </div>
+</section>
+
+<!-- U13/U17 -->
+<section class="ed light" id="u1317">
+  <div class="container">
+    <span class="eyebrow eyebrow-navy">Event details</span>
+    <h2>U13/U17 Doubles</h2>
+    <p class="ed-meta">Sunday 10 May · Peak Play Sports Centre, Laverton</p>
+    <div class="ed-cols">
+      <div class="ed-block">
+        <h4>What it is</h4>
+        <p>A structured junior doubles tournament across two age categories. Pool stage competition followed by knockouts — a proper competitive pathway for young players in a safe, organised environment.</p>
+      </div>
+      <div class="ed-block">
+        <h4>Categories</h4>
+        <ul class="arrow-list">
+          <li>Under 13 Doubles — Boys &amp; Girls</li>
+          <li>Under 17 Doubles — Boys &amp; Girls</li>
+          <li>Graded pools — skill-matched competition</li>
+        </ul>
+      </div>
+      <div class="ed-block">
+        <h4>Entry &amp; prizes</h4>
+        <div class="price-row"><span class="price-big">$80</span><span class="price-unit">per team</span></div>
+        <div class="prize-boxes">
+          <div class="prize-box gold-box-light"><p class="prize-box-amt">$100</p><p class="prize-box-label">1st place cash + trophy</p></div>
+          <div class="prize-box silver-box-light"><p class="prize-box-amt">$75</p><p class="prize-box-label">2nd place cash + trophy</p></div>
+        </div>
+      </div>
+      <div class="ed-block">
+        <h4>Format &amp; venue</h4>
+        <div class="chips" style="margin-bottom:12px">
+          <span class="chip chip-light">Doubles pairs</span>
+          <span class="chip chip-light">Pool stage</span>
+          <span class="chip chip-light">Knockouts</span>
+        </div>
+        <p>Easy access from Hoppers Crossing, Werribee, Wyndham Vale and surrounding suburbs.</p>
+      </div>
+    </div>
+    <div class="fill-strip fill-strip-light">
+      <p><strong>Looking for a partner?</strong> Register your interest via the app and note you need a pair — we'll do our best to help connect you with a suitable partner.</p>
+    </div>
+    <p class="close-note">Registration open now via SuperNova App. Check app for registration close date.</p>
+    <div class="ed-btns">
+      <a href="https://link.supernovaclub.org/App" target="_blank" class="btn btn-gold">Register via the app</a>
+    </div>
+  </div>
+</section>
+
+<!-- SUPERNOVA OPEN -->
+<section class="ed dark" id="open">
+  <div class="container">
+    <span class="eyebrow eyebrow-white">Event details</span>
+    <h2>SuperNova Open</h2>
+    <p class="ed-meta">Sunday 24 May · 9:30 AM – 2:00 PM · Registration closes 17 May</p>
+    <div class="format-cards">
+      <div class="format-card">
+        <div class="format-card-header">
+          <span class="format-card-title">Doubles</span>
+          <span class="format-card-price price-doubles">$90 / team</span>
+        </div>
+        <p class="format-card-sub">2 players per team &nbsp;·&nbsp; MD · WD · XD</p>
+        <p class="format-card-prize"><strong>Prize money + trophies:</strong> $150 winners · $75 runners-up*</p>
+      </div>
+      <div class="format-card">
+        <div class="format-card-header">
+          <span class="format-card-title">Singles</span>
+          <span class="format-card-price price-singles">$59 / player</span>
+        </div>
+        <p class="format-card-sub">1 player per entry &nbsp;·&nbsp; MS · WS</p>
+        <p class="format-card-prize"><strong>Prize money + trophies:</strong> $100 winners · $50 runners-up*</p>
+      </div>
+    </div>
+    <p class="disclaimer">* Prize money applies to categories that meet minimum entries. See FAQ for details.</p>
+    <div class="ed-cols">
+      <div class="ed-block">
+        <h4>What it is</h4>
+        <p>Compete in Singles, Doubles, or both. Structured pool play followed by knockouts across all categories. Graded competition so you play at your level — whether it's your first tournament or your tenth.</p>
+      </div>
+      <div class="ed-block">
+        <h4>Levels</h4>
+        <div class="chips" style="margin-bottom:10px">
+          <span class="chip chip-dark">Advanced</span>
+          <span class="chip chip-dark">Intermediate</span>
+          <span class="chip chip-dark">Beginner</span>
+        </div>
+        <p>Final category placement assigned after registration based on player or team rating.</p>
+      </div>
+      <div class="ed-block">
+        <h4>Format</h4>
+        <ul class="arrow-list">
+          <li>Structured pool play</li>
+          <li>Knockout finals</li>
+          <li>Enter Singles, Doubles, or both</li>
+          <li>Everything tracked via SuperNova App</li>
+        </ul>
+      </div>
+      <div class="ed-block">
+        <h4>Registration closes</h4>
+        <p style="font-family:Georgia,serif;font-size:22px;color:var(--gold);margin-bottom:6px">17 May</p>
+        <p>Categories may fill early — register early to secure your spot.</p>
+      </div>
+    </div>
+    <div class="fill-strip fill-strip-dark">
+      <p><strong>Need a doubles partner?</strong> Register your interest via the app and note you need a partner — we'll do our best to help match you.</p>
+    </div>
+    <p class="close-note">Registration closes 17 May. Register via the SuperNova App.</p>
+    <div class="ed-btns">
+      <a href="https://link.supernovaclub.org/App" target="_blank" class="btn btn-gold">Register now</a>
+      <a href="tel:0425154061" class="btn btn-outline-white">Questions? 0425 154 061</a>
+    </div>
+  </div>
+</section>
+
+<!-- SQUAD TOURNAMENT JUNE -->
+<section class="ed light" id="squad-june">
+  <div class="container">
+    <span class="eyebrow eyebrow-navy">Event details</span>
+    <h2>Squad Tournament</h2>
+    <p class="ed-meta">Saturday 13 June · Momentum Sports Centre, Truganina</p>
+    <div class="ed-cols">
+      <div class="ed-block">
+        <h4>What it is</h4>
+        <p>Squads of four competing together across the day — 2 male, 2 female. One win from anyone swings the whole tie. A full day of team badminton in Melbourne's west at Momentum, Truganina.</p>
+      </div>
+      <div class="ed-block">
+        <h4>Match format</h4>
+        <ul class="arrow-list">
+          <li>4 games per tie: 1 MD · 1 WD · 2 XD</li>
+          <li>30-point games, no deuce</li>
+          <li>75-minute cap per tie</li>
+          <li>Knockouts: 21-point games</li>
+          <li>Round robin pools → knockout finals</li>
+        </ul>
+      </div>
+      <div class="ed-block">
+        <h4>Grades</h4>
+        <div class="chips" style="margin-bottom:12px">
+          <span class="chip chip-light">Beginner</span>
+          <span class="chip chip-light">Intermediate</span>
+          <span class="chip chip-light">Advanced</span>
+        </div>
+        <p>Select your grade on registration. Admin confirms placement after entries close.</p>
+      </div>
+      <div class="ed-block">
+        <h4>Venue</h4>
+        <p>Momentum Sports Centre, Truganina — easy access from Melbourne's western suburbs including Hoppers Crossing, Wyndham Vale and Point Cook.</p>
+      </div>
+    </div>
+    <div class="fill-strip fill-strip-light">
+      <p><strong>No full squad yet?</strong> Register as a fill-in or pair — we'll help place you into a squad where we can. Message 0425 154 061 or select fill-in when registering via the app.</p>
+    </div>
+    <p class="close-note">Registration open. Check app for closing date and pricing details.</p>
+    <div class="ed-btns">
+      <a href="https://link.supernovaclub.org/App" target="_blank" class="btn btn-gold">Register now</a>
+      <a href="https://link.supernovaclub.org/App" target="_blank" class="btn btn-outline-navy">Register as fill-in</a>
+    </div>
+  </div>
+</section>
+
+<!-- PENNANT LEAGUE -->
 <section class="ed dark" id="pennant">
   <div class="container">
     <span class="eyebrow eyebrow-white">Event details</span>
@@ -261,7 +420,7 @@
     <div class="fill-strip fill-strip-dark">
       <p><strong>Advanced level only.</strong> Not sure if this is the right grade? Register interest via the app — we'll confirm your grade placement before the season locks.</p>
     </div>
-    <p class="close-note">Season starts Monday 20 April. Registration via SuperNova App.</p>
+    <p class="close-note">Season started Monday 20 April. Registration via SuperNova App.</p>
     <div class="ed-btns">
       <a href="https://link.supernovaclub.org/App" target="_blank" class="btn btn-gold">Register via the app</a>
       <a href="tel:0425154061" class="btn btn-outline-white">Questions? 0425 154 061</a>
@@ -269,162 +428,6 @@
   </div>
 </section>
 
-<!-- ── EVENT 2: SQUAD TOURNAMENT ── -->
-<section class="ed light" id="squad">
-  <div class="container">
-    <span class="eyebrow eyebrow-navy">Event details</span>
-    <h2>Squad Tournament</h2>
-    <p class="ed-meta">Saturday 3 May · Badminton Connect, Noble Park · Registration closes 22 April</p>
-    <div class="ed-cols">
-      <div class="ed-block">
-        <h4>What it is</h4>
-        <p>A one-day team event built around squads of four — 2 male, 2 female. You compete together across the day, backing your teammates from the sideline between your own matches. One win from anyone swings the whole tie.</p>
-      </div>
-      <div class="ed-block">
-        <h4>Match format</h4>
-        <ul class="arrow-list">
-          <li>4 games per tie: 1 MD · 1 WD · 2 XD</li>
-          <li>30-point games, no deuce</li>
-          <li>75-minute cap per tie</li>
-          <li>Knockouts: 21-point games</li>
-          <li>Round robin pools → knockout finals</li>
-        </ul>
-      </div>
-      <div class="ed-block">
-        <h4>Entry &amp; prizes</h4>
-        <div class="price-row">
-          <span class="price-big">$40</span>
-          <span class="price-unit">per player</span>
-        </div>
-        <p>$200 prize pool · Graded competition · Play at your level</p>
-      </div>
-      <div class="ed-block">
-        <h4>Grades available</h4>
-        <div class="chips" style="margin-bottom:12px">
-          <span class="chip chip-light">Beginner</span>
-          <span class="chip chip-light">Intermediate</span>
-          <span class="chip chip-light">Advanced</span>
-        </div>
-        <p>Select your grade on registration. Admin confirms placement after entries close.</p>
-      </div>
-    </div>
-    <div class="fill-strip fill-strip-light">
-      <p><strong>No full squad yet?</strong> Register as a fill-in or pair — we'll help place you into a squad where we can. Message 0425 154 061 or select fill-in when registering via the app.</p>
-    </div>
-    <p class="close-note">Registration closes 22 April. Register via the SuperNova App or at badmintontournament.fifthark.com</p>
-    <div class="ed-btns">
-      <a href="https://link.supernovaclub.org/App" target="_blank" class="btn btn-gold">Register now</a>
-      <a href="https://link.supernovaclub.org/App" target="_blank" class="btn btn-outline-navy">Register as fill-in</a>
-    </div>
-  </div>
-</section>
-
-<!-- ── EVENT 3: U13/U17 DOUBLES ── -->
-<section class="ed dark" id="u1317">
-  <div class="container">
-    <span class="eyebrow eyebrow-white">Event details</span>
-    <h2>U13/U17 Doubles</h2>
-    <p class="ed-meta">Sunday 10 May · Peak Play Sports Centre, Laverton</p>
-    <div class="ed-cols">
-      <div class="ed-block">
-        <h4>What it is</h4>
-        <p>A structured junior doubles tournament across two age categories. Pool stage competition followed by knockouts — a proper competitive pathway for young players in a safe, organised environment.</p>
-      </div>
-      <div class="ed-block">
-        <h4>Categories</h4>
-        <ul class="arrow-list">
-          <li>Under 13 Doubles — Boys &amp; Girls</li>
-          <li>Under 17 Doubles — Boys &amp; Girls</li>
-          <li>Graded pools — skill-matched competition</li>
-        </ul>
-      </div>
-      <div class="ed-block">
-        <h4>Entry &amp; prizes</h4>
-        <div class="price-row">
-          <span class="price-big">$80</span>
-          <span class="price-unit">per team</span>
-        </div>
-        <div class="prize-boxes">
-          <div class="prize-box gold-box">
-            <p class="prize-box-amt">$100</p>
-            <p class="prize-box-label">1st place cash + trophy</p>
-          </div>
-          <div class="prize-box silver-box">
-            <p class="prize-box-amt">$75</p>
-            <p class="prize-box-label">2nd place cash + trophy</p>
-          </div>
-        </div>
-      </div>
-      <div class="ed-block">
-        <h4>Format &amp; venue</h4>
-        <div class="chips" style="margin-bottom:12px">
-          <span class="chip chip-dark">Doubles pairs</span>
-          <span class="chip chip-dark">Pool stage</span>
-          <span class="chip chip-dark">Knockouts</span>
-        </div>
-        <p>Easy access from Hoppers Crossing, Werribee, Wyndham Vale and surrounding suburbs.</p>
-      </div>
-    </div>
-    <div class="fill-strip fill-strip-dark">
-      <p><strong>Looking for a partner?</strong> Register your interest via the app and note you need a pair — we'll do our best to help connect you with a suitable partner.</p>
-    </div>
-    <p class="close-note">Registration open now via SuperNova App. Check app for registration close date.</p>
-    <div class="ed-btns">
-      <a href="https://link.supernovaclub.org/App" target="_blank" class="btn btn-gold">Register via the app</a>
-    </div>
-  </div>
-</section>
-
-<!-- ── EVENT 4: ADULTS DOUBLES ── -->
-<section class="ed light" id="adults">
-  <div class="container">
-    <span class="eyebrow eyebrow-navy">Event details</span>
-    <h2>Adults Doubles</h2>
-    <p class="ed-meta">Saturday 23 May · ACM Sports Centre, Truganina</p>
-    <div class="ed-cols">
-      <div class="ed-block">
-        <h4>What it is</h4>
-        <p>Graded doubles competition for adult players across all levels. Pool stage followed by knockouts. Real prizes, skill-matched opponents — everything run through the SuperNova App.</p>
-      </div>
-      <div class="ed-block">
-        <h4>Categories</h4>
-        <ul class="arrow-list">
-          <li>Men's Doubles</li>
-          <li>Women's Doubles</li>
-          <li>Mixed Doubles</li>
-          <li>Register one or multiple categories</li>
-        </ul>
-      </div>
-      <div class="ed-block">
-        <h4>Grades</h4>
-        <div class="chips" style="margin-bottom:12px">
-          <span class="chip chip-light">Beginner</span>
-          <span class="chip chip-light">Intermediate</span>
-          <span class="chip chip-light">Advanced</span>
-        </div>
-        <p>You compete at your grade. Graded pools from registration — no mismatches.</p>
-      </div>
-      <div class="ed-block">
-        <h4>Format</h4>
-        <ul class="arrow-list">
-          <li>Pool stage → Semi-finals → Final</li>
-          <li>Prizes for all categories</li>
-          <li>Everything tracked via SuperNova App</li>
-        </ul>
-      </div>
-    </div>
-    <div class="fill-strip fill-strip-light">
-      <p><strong>Need a partner?</strong> Register your interest and note you need a pair. We'll help match you where we can — or DM us on 0425 154 061.</p>
-    </div>
-    <p class="close-note">Registration open now. Check app for closing date and pricing.</p>
-    <div class="ed-btns">
-      <a href="https://link.supernovaclub.org/App" target="_blank" class="btn btn-gold">Register via the app</a>
-      <a href="tel:0425154061" class="btn btn-outline-navy">Find a partner</a>
-    </div>
-  </div>
-</section>
-
-<!-- FINAL CTA -->
 <section class="final-cta">
   <div class="container">
     <h2>Ready to play?</h2>
@@ -437,7 +440,6 @@
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-brand">
