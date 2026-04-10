@@ -1,0 +1,219 @@
+/* ── SuperNova Badminton Club — Global Styles ── */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy:        #1A1A3E;
+  --navy-mid:    #252552;
+  --navy-light:  #2E2E65;
+  --gold:        #D4A843;
+  --gold-soft:   #C9A96E;
+  --off-white:   #F6F5F1;
+  --white:       #FFFFFF;
+  --on-navy:     rgba(255,255,255,0.85);
+  --muted:       rgba(255,255,255,0.50);
+  --border-gold: rgba(212,168,67,0.28);
+  --border-dark: rgba(26,26,62,0.11);
+  --green-bg:    #EAF3DE;
+  --green-text:  #3B6D11;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  background: var(--off-white);
+  color: var(--navy);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.serif { font-family: Georgia, 'Times New Roman', serif; }
+
+/* ── TYPOGRAPHY ── */
+h1, h2, h3 { font-family: Georgia, serif; font-weight: 400; line-height: 1.15; }
+h1 { font-size: clamp(36px, 5vw, 52px); }
+h2 { font-size: clamp(22px, 3.5vw, 32px); }
+h3 { font-size: clamp(17px, 2.5vw, 22px); }
+
+.eyebrow {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 10px;
+}
+.eyebrow-gold  { color: var(--gold); }
+.eyebrow-navy  { color: rgba(26,26,62,0.40); }
+.eyebrow-white { color: var(--gold-soft); }
+
+/* ── LAYOUT ── */
+.container { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
+
+/* ── BUTTONS ── */
+.btn {
+  display: inline-block;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 11px 24px;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: opacity 0.15s, transform 0.12s;
+}
+.btn:hover  { opacity: 0.88; }
+.btn:active { transform: scale(0.98); }
+
+.btn-gold    { background: var(--gold); color: var(--navy); }
+.btn-outline-gold  { border: 1px solid rgba(212,168,67,0.5); color: var(--gold); background: transparent; }
+.btn-outline-navy  { border: 1px solid rgba(26,26,62,0.22); color: rgba(26,26,62,0.70); background: transparent; }
+.btn-outline-white { border: 1px solid rgba(212,168,67,0.4); color: var(--gold); background: transparent; }
+
+/* ── NAV ── */
+.nav {
+  background: var(--navy);
+  border-bottom: 1px solid var(--border-gold);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 56px;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.nav-brand {
+  font-family: Georgia, serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--white);
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+.nav-brand span {
+  font-family: inherit;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold-soft);
+  font-weight: 400;
+}
+.nav-links { display: flex; align-items: center; gap: 28px; }
+.nav-links a {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--on-navy);
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: color 0.15s;
+}
+.nav-links a:hover { color: var(--gold); }
+.nav-cta { margin-left: 8px; }
+
+/* ── STATUS PILL ── */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: var(--green-bg);
+  color: var(--green-text);
+}
+.pill-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--green-text);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* ── FORMAT CHIPS ── */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip {
+  font-size: 11px;
+  padding: 3px 10px;
+  border-radius: 20px;
+}
+.chip-dark  { background: rgba(255,255,255,0.09); color: rgba(255,255,255,0.75); }
+.chip-light { background: rgba(26,26,62,0.07);    color: rgba(26,26,62,0.65); }
+
+/* ── ARROW LIST ── */
+.arrow-list { list-style: none; padding: 0; }
+.arrow-list li {
+  position: relative;
+  padding: 3px 0 3px 16px;
+  font-size: 13px;
+  line-height: 1.6;
+}
+.arrow-list li::before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 11px;
+  top: 4px;
+}
+
+/* ── FILL-IN STRIP ── */
+.fill-strip {
+  border-radius: 5px;
+  padding: 14px 18px;
+  margin-bottom: 24px;
+}
+.fill-strip p { font-size: 13px; line-height: 1.6; }
+.fill-strip-dark  { background: rgba(212,168,67,0.08); border: 1px solid var(--border-gold); }
+.fill-strip-light { background: var(--off-white); border: 1px solid var(--border-dark); }
+.fill-strip-dark  p { color: var(--on-navy); }
+.fill-strip-light p { color: rgba(26,26,62,0.75); }
+.fill-strip strong { font-weight: 600; }
+.fill-strip-dark  strong { color: var(--gold); }
+.fill-strip-light strong { color: var(--navy); }
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--navy);
+  border-top: 1px solid var(--border-gold);
+  padding: 40px 32px;
+}
+.footer-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: center;
+}
+.footer-brand h3 {
+  font-family: Georgia, serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 3px;
+}
+.footer-brand p { font-size: 11px; color: var(--muted); line-height: 1.7; }
+.footer-links { text-align: right; font-size: 12px; color: var(--muted); line-height: 1.9; }
+.footer-links a { color: var(--gold-soft); text-decoration: none; }
+.footer-links a:hover { color: var(--gold); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .container { padding: 0 20px; }
+  .nav-links { display: none; }
+  .nav-inner { padding: 0 20px; }
+  .footer-inner { grid-template-columns: 1fr; }
+  .footer-links { text-align: left; }
+}

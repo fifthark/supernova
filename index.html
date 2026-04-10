@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SuperNova Badminton Club — Melbourne's Community Badminton Club</title>
+<meta name="description" content="Structured badminton across Melbourne. Tournaments, leagues and programs — skill-matched competition, organised in one place. 600+ players.">
+<link rel="stylesheet" href="style.css">
+<style>
+
+/* ── HERO ── */
+.hero {
+  background: var(--navy);
+  border-bottom: 1px solid var(--border-gold);
+}
+.hero-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 72px 32px 64px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.hero-text {}
+.hero h1 { color: var(--white); margin: 14px 0 18px; max-width: 480px; }
+.hero-sub { font-size: 15px; color: var(--on-navy); line-height: 1.7; max-width: 440px; margin-bottom: 32px; }
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 20px; }
+.trust { font-size: 11px; color: var(--muted); }
+.trust strong { color: var(--gold); font-weight: 500; }
+.hero-visual {
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: var(--navy-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-gold);
+  position: relative;
+}
+.hero-visual-placeholder {
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  padding: 20px;
+}
+.hero-visual-placeholder p { margin-top: 8px; font-size: 11px; color: rgba(255,255,255,0.3); }
+
+/* ── PATHWAYS ── */
+.pathways {
+  background: var(--white);
+  padding: 64px 0;
+  border-bottom: 1px solid var(--border-dark);
+}
+.pathways h2 { color: var(--navy); margin: 10px 0 8px; }
+.pathways-sub { font-size: 13px; color: rgba(26,26,62,0.5); margin-bottom: 36px; }
+.pathway-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 18px;
+}
+.pathway-card {
+  border-radius: 10px;
+  padding: 28px 24px;
+  transition: transform 0.18s;
+}
+.pathway-card:hover { transform: translateY(-2px); }
+.pathway-card.featured {
+  background: var(--navy);
+  border: 1px solid var(--border-gold);
+}
+.pathway-card.plain {
+  background: var(--off-white);
+  border: 1px solid var(--border-dark);
+}
+.pathway-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+}
+.pathway-card.featured .pathway-label { color: var(--gold); }
+.pathway-card.plain    .pathway-label { color: rgba(26,26,62,0.4); }
+.pathway-card h3 { margin-bottom: 10px; }
+.pathway-card.featured h3 { color: var(--white); }
+.pathway-card.plain    h3 { color: var(--navy); }
+.pathway-card p { font-size: 13px; line-height: 1.65; margin-bottom: 18px; }
+.pathway-card.featured p { color: var(--on-navy); }
+.pathway-card.plain    p { color: rgba(26,26,62,0.65); }
+.pathway-card .arrow-list { margin-bottom: 22px; }
+.pathway-card.featured .arrow-list li { color: var(--on-navy); }
+.pathway-card.plain    .arrow-list li { color: rgba(26,26,62,0.65); }
+.pathway-card .btn { font-size: 12px; padding: 9px 18px; }
+
+/* ── PENNANT SECTION ── */
+.pennant {
+  background: var(--navy);
+  border-top: 1px solid var(--border-gold);
+  padding: 64px 0;
+}
+.pennant-header {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 48px;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid var(--border-gold);
+}
+.pennant h2 { color: var(--white); margin: 10px 0 16px; }
+.pennant-intro { font-size: 14px; color: var(--on-navy); line-height: 1.75; }
+.pennant-stats { display: flex; flex-direction: column; gap: 18px; justify-content: center; }
+.pstat { display: flex; align-items: baseline; gap: 12px; }
+.pstat-num {
+  font-family: Georgia, serif;
+  font-size: 30px;
+  font-weight: 400;
+  color: var(--gold);
+  min-width: 64px;
+  flex-shrink: 0;
+}
+.pstat-label { font-size: 13px; color: var(--on-navy); line-height: 1.4; }
+
+/* Season arc */
+.season-arc {
+  display: grid;
+  grid-template-columns: repeat(6,1fr);
+  border: 1px solid var(--border-gold);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 36px;
+}
+.arc-step {
+  padding: 16px 12px;
+  text-align: center;
+  border-right: 1px solid var(--border-gold);
+}
+.arc-step:last-child { border-right: none; }
+.arc-step.hl { background: rgba(212,168,67,0.1); }
+.arc-step-n { font-size: 9px; color: var(--gold-soft); margin-bottom: 5px; letter-spacing: 0.08em; text-transform: uppercase; }
+.arc-step-t { font-size: 12px; font-weight: 500; color: var(--white); margin-bottom: 4px; }
+.arc-step-d { font-size: 11px; color: var(--muted); line-height: 1.4; }
+
+/* Pennant detail cols */
+.pennant-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px 44px;
+  margin-bottom: 36px;
+}
+.p-block h4 {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-soft);
+  margin-bottom: 12px;
+}
+.p-block p    { font-size: 13px; color: var(--on-navy); line-height: 1.65; }
+.p-block .arrow-list li { color: var(--on-navy); }
+
+/* FAQ */
+.pennant-faq {
+  border-top: 1px solid var(--border-gold);
+  padding-top: 32px;
+  margin-bottom: 32px;
+}
+.pennant-faq h4 {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold-soft);
+  margin-bottom: 20px;
+}
+.faq-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 44px; }
+.faq-q { font-size: 13px; font-weight: 500; color: var(--white); margin-bottom: 4px; }
+.faq-a { font-size: 12px; color: var(--on-navy); line-height: 1.6; }
+
+/* ── LIVE EVENTS STRIP ── */
+.events-strip {
+  background: var(--off-white);
+  padding: 64px 0;
+  border-bottom: 1px solid var(--border-dark);
+}
+.events-strip h2 { color: var(--navy); margin: 10px 0 8px; }
+.strip-sub { font-size: 13px; color: rgba(26,26,62,0.5); margin-bottom: 32px; }
+.strip-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.strip-card {
+  background: var(--white);
+  border: 1px solid var(--border-dark);
+  border-radius: 9px;
+  padding: 18px 18px 16px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+  display: block;
+  color: inherit;
+}
+.strip-card:hover { border-color: rgba(26,26,62,0.22); box-shadow: 0 4px 18px rgba(26,26,62,0.06); }
+.strip-type { font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold-soft); margin-bottom: 5px; display: block; }
+.strip-card h4 { font-size: 14px; font-family: Georgia, serif; font-weight: 400; color: var(--navy); margin-bottom: 6px; line-height: 1.3; }
+.strip-meta { font-size: 11px; color: rgba(26,26,62,0.5); line-height: 1.55; margin-bottom: 14px; }
+.strip-cta-row { text-align: right; }
+.strip-cta { font-size: 12px; font-weight: 500; color: var(--navy); border-bottom: 1px solid rgba(26,26,62,0.22); padding-bottom: 1px; text-decoration: none; }
+.strip-cta:hover { color: var(--gold); border-color: var(--gold); }
+
+/* ── WHY ── */
+.why {
+  background: var(--white);
+  padding: 64px 0;
+  border-bottom: 1px solid var(--border-dark);
+}
+.why h2 { color: var(--navy); margin: 10px 0 8px; }
+.why-sub { font-size: 13px; color: rgba(26,26,62,0.5); margin-bottom: 36px; }
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 16px;
+}
+.why-card {
+  background: var(--off-white);
+  border: 1px solid var(--border-dark);
+  border-radius: 9px;
+  padding: 20px 18px;
+}
+.why-bar { width: 22px; height: 3px; background: var(--gold); border-radius: 2px; margin-bottom: 12px; }
+.why-card h4 { font-size: 13px; font-weight: 500; color: var(--navy); margin-bottom: 6px; }
+.why-card p  { font-size: 12px; color: rgba(26,26,62,0.6); line-height: 1.6; }
+
+/* ── PROOF STRIP ── */
+.proof {
+  background: var(--navy-mid);
+  border-top: 1px solid var(--border-gold);
+  padding: 44px 0;
+}
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.proof-block {
+  text-align: center;
+  border-right: 1px solid var(--border-gold);
+  padding: 0 16px;
+}
+.proof-block:last-child { border-right: none; }
+.proof-num { font-family: Georgia, serif; font-size: 38px; font-weight: 400; color: var(--gold); }
+.proof-label { font-size: 11px; color: var(--muted); margin-top: 5px; line-height: 1.4; }
+
+/* ── SOCIALS ── */
+.socials {
+  background: var(--navy);
+  padding: 60px 0;
+  border-top: 1px solid var(--border-gold);
+}
+.socials h2 { color: var(--white); margin: 10px 0 10px; }
+.socials-sub { font-size: 13px; color: var(--muted); margin-bottom: 36px; max-width: 420px; line-height: 1.7; }
+.socials-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 14px;
+  margin-bottom: 44px;
+}
+.social-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border-gold);
+  border-radius: 9px;
+  padding: 20px 18px;
+  transition: background 0.2s;
+}
+.social-card:hover { background: rgba(255,255,255,0.08); }
+.social-platform { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; display: block; }
+.social-card h4 { font-family: Georgia, serif; font-size: 15px; font-weight: 400; color: var(--white); margin-bottom: 6px; }
+.social-card p  { font-size: 12px; color: var(--muted); line-height: 1.55; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hero-inner     { grid-template-columns: 1fr; }
+  .hero-visual    { display: none; }
+  .pathway-grid   { grid-template-columns: 1fr; }
+  .pennant-header { grid-template-columns: 1fr; }
+  .season-arc     { grid-template-columns: repeat(3,1fr); }
+  .pennant-cols   { grid-template-columns: 1fr; }
+  .faq-grid       { grid-template-columns: 1fr; }
+  .strip-grid     { grid-template-columns: 1fr 1fr; }
+  .why-grid       { grid-template-columns: 1fr 1fr; }
+  .socials-grid   { grid-template-columns: 1fr 1fr; }
+  .proof-grid     { grid-template-columns: 1fr 1fr; gap: 24px 0; }
+  .proof-block:nth-child(2) { border-right: none; }
+}
+@media (max-width: 560px) {
+  .strip-grid  { grid-template-columns: 1fr; }
+  .why-grid    { grid-template-columns: 1fr; }
+  .socials-grid{ grid-template-columns: 1fr; }
+  .proof-grid  { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      SuperNova Badminton Club
+      <span>Melbourne's Community Badminton Club</span>
+    </a>
+    <div class="nav-links">
+      <a href="#pennant">Pennant League</a>
+      <a href="events.html">Events</a>
+      <a href="#socials">Contact</a>
+      <a href="https://link.supernovaclub.org/App" target="_blank" class="btn btn-gold nav-cta">Join the app</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <span class="eyebrow eyebrow-gold">SuperNova Badminton Club</span>
+      <h1>Find your level.<br>Raise your game.</h1>
+      <p class="hero-sub">Structured badminton across Melbourne — skill-matched competition, real formats, everything organised in one place. No more scrambling. Just show up and play.</p>
+      <div class="hero-btns">
+        <a href="events.html" class="btn btn-gold">View live events</a>
+        <a href="https://link.supernovaclub.org/App" target="_blank" class="btn btn-outline-gold">Join the app</a>
+      </div>
+      <p class="trust"><strong>600+</strong> players across Melbourne already play with SuperNova.</p>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-visual-placeholder">
+        <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="24" cy="24" r="23" stroke="rgba(212,168,67,0.4)" stroke-width="1.5"/>
+          <path d="M16 32 L24 16 L32 32" stroke="rgba(212,168,67,0.6)" stroke-width="1.5" fill="none"/>
+          <circle cx="24" cy="12" r="3" fill="rgba(212,168,67,0.4)"/>
+        </svg>
+        <p>Add hero badminton image here<br>Recommended: 800×600px</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPETE · COMMIT · BELONG -->
+<section class="pathways">
+  <div class="container">
+    <span class="eyebrow eyebrow-navy">Find your way in</span>
+    <h2>Compete. Commit. Belong.</h2>
+    <p class="pathways-sub">Whether you want to enter a tournament, lock in a full season, or find your community — there's a format for you.</p>
+    <div class="pathway-grid">
+
+      <div class="pathway-card featured">
+        <span class="pathway-label">Flagship product</span>
+        <h3>Pennant League</h3>
+        <p>Your weekly badminton. Sorted. An 8-week structured season with balanced teams, live standings, and something genuinely worth playing for every week.</p>
+        <ul class="arrow-list">
+          <li>8-week competitive season</li>
+          <li>Balanced teams, drafted by skill</li>
+          <li>Same courts, same night, every week</li>
+          <li>Semis, Finals &amp; Trophy Night</li>
+          <li>Courts &amp; shuttles included</li>
+        </ul>
+        <a href="#pennant" class="btn btn-gold">Explore Pennant ↓</a>
+      </div>
+
+      <div class="pathway-card plain">
+        <span class="pathway-label">One-day events</span>
+        <h3>Tournaments</h3>
+        <p>Squad Battles, Doubles, Junior divisions — real prizes, graded competition, everything run through the SuperNova App. Enter when it suits you.</p>
+        <ul class="arrow-list">
+          <li>Squad Tournaments (4-player teams)</li>
+          <li>Doubles — Men's, Women's, Mixed</li>
+          <li>U13/U17 Junior divisions</li>
+          <li>Cash prizes &amp; trophies</li>
+          <li>Graded pools — play at your level</li>
+        </ul>
+        <a href="events.html" class="btn btn-outline-navy">View live events →</a>
+      </div>
+
+      <div class="pathway-card plain">
+        <span class="pathway-label">Community</span>
+        <h3>Programs</h3>
+        <p>Women's sessions, junior pathways and community programs designed around belonging first. A place to improve, connect, and feel at home on court.</p>
+        <ul class="arrow-list">
+          <li>Women's programs</li>
+          <li>Junior development pathways</li>
+          <li>Coached sessions</li>
+          <li>Community social play</li>
+          <li>Welcoming to all levels</li>
+        </ul>
+        <a href="https://link.supernovaclub.org/App" target="_blank" class="btn btn-outline-navy">Learn more →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PENNANT DEEP DIVE -->
+<section class="pennant" id="pennant">
+  <div class="container">
+    <span class="eyebrow eyebrow-white">SuperNova Pennant League</span>
+    <div class="pennant-header">
+      <div>
+        <h2>Compete every week.<br>Same courts, balanced teams,<br>real stakes.</h2>
+        <p class="pennant-intro">No more scrambling for games. No more mismatched opponents. Just structured doubles — drafted teams, live standings, and knockouts worth playing for. Advanced league running now at ACM Truganina.</p>
+      </div>
+      <div class="pennant-stats">
+        <div class="pstat">
+          <span class="pstat-num">8</span>
+          <span class="pstat-label">Week competitive season including Semis &amp; Finals</span>
+        </div>
+        <div class="pstat">
+          <span class="pstat-num">4</span>
+          <span class="pstat-label">Players per team, drafted by skill level</span>
+        </div>
+        <div class="pstat">
+          <span class="pstat-num">2.5h</span>
+          <span class="pstat-label">Per week — same night, same venue, every round</span>
+        </div>
+        <div class="pstat">
+          <span class="pstat-num">Live</span>
+          <span class="pstat-label">Standings, match stats &amp; ratings updated after every game</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Season arc -->
+    <div class="season-arc">
+      <div class="arc-step">
+        <p class="arc-step-n">Step 1</p>
+        <p class="arc-step-t">Register</p>
+        <p class="arc-step-d">Sign up via the app. No obligation until teams confirmed.</p>
+      </div>
+      <div class="arc-step">
+        <p class="arc-step-n">Step 2</p>
+        <p class="arc-step-t">Assess</p>
+        <p class="arc-step-d">Attend assessment day. Get accurately rated.</p>
+      </div>
+      <div class="arc-step">
+        <p class="arc-step-n">Step 3</p>
+        <p class="arc-step-t">Draft</p>
+        <p class="arc-step-d">Placed into a balanced team of 4.</p>
+      </div>
+      <div class="arc-step">
+        <p class="arc-step-n">Rounds 1–6</p>
+        <p class="arc-step-t">Regular Season</p>
+        <p class="arc-step-d">Round robin. Every team plays every other team once.</p>
+      </div>
+      <div class="arc-step hl">
+        <p class="arc-step-n">Week 7</p>
+        <p class="arc-step-t">Semi-finals</p>
+        <p class="arc-step-d">Top 4 teams battle it out.</p>
+      </div>
+      <div class="arc-step hl">
+        <p class="arc-step-n">Week 8</p>
+        <p class="arc-step-t">Grand Final</p>
+        <p class="arc-step-d">Final + Trophy Night. Wins are earned.</p>
+      </div>
+    </div>
+
+    <div class="pennant-cols">
+      <div class="p-block">
+        <h4>Weekly format</h4>
+        <ul class="arrow-list">
+          <li>7:00 PM arrival — structured warm-up</li>
+          <li>Team vs team — 12 matches per night</li>
+          <li>3 courts in use, 1 team on bye each round</li>
+          <li>Every match recorded, live standings updated</li>
+          <li>Approximately 2.5 hours start to finish</li>
+        </ul>
+      </div>
+      <div class="p-block">
+        <h4>What's included</h4>
+        <ul class="arrow-list">
+          <li>Courts &amp; shuttles every week</li>
+          <li>Live standings &amp; match stats</li>
+          <li>Weekly MVP recognition</li>
+          <li>Personal end-of-season stats report</li>
+          <li>Semis, Finals + Trophy Night</li>
+        </ul>
+      </div>
+      <div class="p-block">
+        <h4>Is it right for you?</h4>
+        <ul class="arrow-list">
+          <li>You want consistent, skill-matched competition every week</li>
+          <li>You're done with disorganised socials and mismatched games</li>
+          <li>You want real opponents, real stakes, real stats</li>
+          <li>You can commit to most weeks of an 8-week season</li>
+        </ul>
+      </div>
+      <div class="p-block">
+        <h4>Currently running</h4>
+        <p style="margin-bottom:10px;color:var(--on-navy)">Pennant League — Advanced<br>Starts Mon 20 April · ACM Truganina · Weekly</p>
+        <p style="color:var(--on-navy)">Can't commit to a full season? Join the Reserve Pool — fill in when teams need cover, no season commitment required.</p>
+      </div>
+    </div>
+
+    <div class="pennant-faq">
+      <h4>Common questions</h4>
+      <div class="faq-grid">
+        <div class="faq-item">
+          <p class="faq-q">What if I miss a week?</p>
+          <p class="faq-a">We'll arrange a fill-in so your team isn't short. You'll receive a social session credit valid for 3 months at any SuperNova session.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">How are teams balanced?</p>
+          <p class="faq-a">Every player is assessed before the season. Teams are drafted by skill and reviewed in the first few weeks — adjustments made to protect competitive balance.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">What level do I need to be?</p>
+          <p class="faq-a">The Advanced league is for strong competitive players. Register interest and we'll guide you on the right grade — no pressure.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Can I join without a full season commitment?</p>
+          <p class="faq-a">Yes — the Reserve Pool is free and flexible. You fill in when teams need cover, no season commitment required.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap">
+      <a href="https://link.supernovaclub.org/App" target="_blank" class="btn btn-gold">Register via the app</a>
+      <span style="font-size:12px;color:var(--muted)">No obligation until teams are confirmed.</span>
+    </div>
+  </div>
+</section>
+
+<!-- LIVE EVENTS STRIP -->
+<section class="events-strip">
+  <div class="container">
+    <span class="eyebrow eyebrow-navy">What's live now</span>
+    <h2>Open for registration.</h2>
+    <p class="strip-sub">Four events live across May and June. Click any event for full details and registration.</p>
+    <div class="strip-grid">
+      <a href="events.html#pennant" class="strip-card">
+        <span class="strip-type">Pennant League</span>
+        <h4>Pennant League — Advanced</h4>
+        <p class="strip-meta">Mon 20 Apr · ACM Truganina<br>Weekly · Ongoing</p>
+        <span class="pill"><span class="pill-dot"></span>Open</span>
+      </a>
+      <a href="events.html#squad" class="strip-card">
+        <span class="strip-type">Squad Tournament</span>
+        <h4>Squad Tournament</h4>
+        <p class="strip-meta">Sat 3 May · Noble Park<br>$200 prize · Closes 22 Apr</p>
+        <span class="pill"><span class="pill-dot"></span>Open</span>
+      </a>
+      <a href="events.html#u1317" class="strip-card">
+        <span class="strip-type">Junior Doubles</span>
+        <h4>U13/U17 Doubles</h4>
+        <p class="strip-meta">Sun 10 May · Laverton<br>$80/team · $100 + $75 prizes</p>
+        <span class="pill"><span class="pill-dot"></span>Open</span>
+      </a>
+      <a href="events.html#adults" class="strip-card">
+        <span class="strip-type">Adults Tournament</span>
+        <h4>Adults Doubles</h4>
+        <p class="strip-meta">Sat 23 May · ACM Truganina<br>All grades · M / W / Mixed</p>
+        <span class="pill"><span class="pill-dot"></span>Open</span>
+      </a>
+    </div>
+    <div class="strip-cta-row">
+      <a href="events.html" class="strip-cta">View full event details and register →</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why">
+  <div class="container">
+    <span class="eyebrow eyebrow-navy">Why players keep coming back</span>
+    <h2>Structure beats chaos — every time.</h2>
+    <p class="why-sub">Built for players who want more than a casual hit.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-bar"></div>
+        <h4>Structured formats</h4>
+        <p>Clear schedules, graded pools, balanced teams. You always know what you're turning up for.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-bar"></div>
+        <h4>Skill-matched play</h4>
+        <p>Drafts and grading mean every match is competitive. No stacked teams. No mismatches.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-bar"></div>
+        <h4>One app</h4>
+        <p>Registrations, draws, results, ratings — all in one place. No group chats, no spreadsheets.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-bar"></div>
+        <h4>Always something on</h4>
+        <p>11 events across 2026. Tournaments, leagues, junior divisions — a full year of badminton.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF STRIP -->
+<div class="proof">
+  <div class="proof-grid">
+    <div class="proof-block">
+      <p class="proof-num">600+</p>
+      <p class="proof-label">Players across<br>Melbourne</p>
+    </div>
+    <div class="proof-block">
+      <p class="proof-num">11</p>
+      <p class="proof-label">Events across<br>2026</p>
+    </div>
+    <div class="proof-block">
+      <p class="proof-num">4</p>
+      <p class="proof-label">Formats — league,<br>squad, doubles, juniors</p>
+    </div>
+    <div class="proof-block">
+      <p class="proof-num">Live</p>
+      <p class="proof-label">Scoring &amp; performance<br>tracking</p>
+    </div>
+  </div>
+</div>
+
+<!-- SOCIALS -->
+<section class="socials" id="socials">
+  <div class="container">
+    <span class="eyebrow eyebrow-white">Stay connected</span>
+    <h2>Follow along. Stay in the loop.</h2>
+    <p class="socials-sub">Match highlights, tournament results, player spotlights and league updates across all channels.</p>
+    <div class="socials-grid">
+      <div class="social-card">
+        <span class="social-platform">WhatsApp</span>
+        <h4>Direct updates</h4>
+        <p>League reminders, draw releases and urgent updates straight to your phone.</p>
+      </div>
+      <div class="social-card">
+        <span class="social-platform">Facebook</span>
+        <h4>Announcements</h4>
+        <p>Tournament announcements, event launches and league updates.</p>
+      </div>
+      <div class="social-card">
+        <span class="social-platform">Instagram</span>
+        <h4>Community moments</h4>
+        <p>Match highlights, player spotlights and behind-the-scenes from every event.</p>
+      </div>
+      <div class="social-card">
+        <span class="social-platform">Email</span>
+        <h4>Got a question?</h4>
+        <p>info@supernovaclub.org — we're here to help before you register.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h3>SuperNova Badminton Club</h3>
+      <p>Melbourne's Community Badminton Club<br>Find Your Level. Raise Your Game.</p>
+    </div>
+    <div class="footer-links">
+      App: <a href="https://link.supernovaclub.org/App" target="_blank">link.supernovaclub.org/App</a><br>
+      Phone: <a href="tel:0425154061">0425 154 061</a><br>
+      Email: <a href="mailto:info@supernovaclub.org">info@supernovaclub.org</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
